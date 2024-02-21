@@ -36,6 +36,9 @@ public class Account {
         deleteAccountCompleted.publishAfterCommit();
     }
 
+    @PreRemove
+    public void onPreRemove() {}
+
     public static AccountRepository repository() {
         AccountRepository accountRepository = AccountApplication.applicationContext.getBean(
             AccountRepository.class
