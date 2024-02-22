@@ -28,7 +28,7 @@ spring:
         - id: cash
           uri: http://localhost:8086
           predicates:
-            - Path=/cashs/**, 
+            - Path=/cash/**, 
         - id: frontend
           uri: http://localhost:8080
           predicates:
