@@ -12,7 +12,7 @@ import lombok.*;
 public class DeleteCashCompleted extends AbstractEvent {
 
     private Long id;
-    private String accountId;
+    private Long accountId;
     private Integer currentCash;
 
     public DeleteCashCompleted(Cash aggregate) {

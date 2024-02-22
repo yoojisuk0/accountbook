@@ -12,7 +12,7 @@ import lombok.*;
 public class ModifyCategoryCompleted extends AbstractEvent {
 
     private Long id;
-    private String userId;
+    private Long accountId;
     private String categoryId;
 
     public ModifyCategoryCompleted(Income aggregate) {

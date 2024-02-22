@@ -9,7 +9,7 @@ import lombok.ToString;
 public class CreateExpenseCompleted extends AbstractEvent {
 
     private Long id;
-    private String userId;
+    private Long accountId;
     private String categoryId;
     private Integer expenseCash;
 }

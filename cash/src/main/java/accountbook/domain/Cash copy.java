@@ -17,7 +17,7 @@
 //     @GeneratedValue(strategy = GenerationType.AUTO)
 //     private Long id;
 
-//     private String accountId;
+//     private Long accountId;
 
 //     private Integer currentCash;
 

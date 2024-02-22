@@ -19,7 +19,7 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String userId;
+    private Long accountId;
 
     private String accountStatus;
 
@@ -30,10 +30,10 @@ public class Account {
         );
         createAccountCompleted.publishAfterCommit();
 
-        DeleteAccountCompleted deleteAccountCompleted = new DeleteAccountCompleted(
+        /* DeleteAccountCompleted deleteAccountCompleted = new DeleteAccountCompleted(
             this
         );
-        deleteAccountCompleted.publishAfterCommit();
+        deleteAccountCompleted.publishAfterCommit(); */
     }
 
     public static AccountRepository repository() {

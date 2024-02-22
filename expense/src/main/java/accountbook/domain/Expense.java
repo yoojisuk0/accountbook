@@ -17,7 +17,7 @@ public class Expense {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String userId;
+    private Long accountId;
 
     private String categoryId;
 
@@ -28,6 +28,15 @@ public class Expense {
             ExpenseRepository.class
         );
         return expenseRepository;
+    }
+
+    @PostPersist
+    public void onPostPersist() {
+        CreateExpenseCompleted createExpenseCompleted = new CreateExpenseCompleted(
+            this
+        );
+        createExpenseCompleted.publishAfterCommit();
+
     }
 
     //<<< Clean Arch / Port Method

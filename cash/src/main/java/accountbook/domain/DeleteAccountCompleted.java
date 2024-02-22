@@ -10,6 +10,6 @@ import lombok.*;
 public class DeleteAccountCompleted extends AbstractEvent {
 
     private Long id;
-    private String userId;
+    private Long accountId;
     private String accountStatus;
 }

@@ -17,11 +17,21 @@ public class Income {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String userId;
+    private Long accountId;
 
     private String categoryId;
 
     private Integer incomeCash;
+
+    @PostPersist
+    public void onPostPersist() {
+        CreateIncomeCompleted createIncomeCompleted = new CreateIncomeCompleted(
+            this
+        );
+        createIncomeCompleted.publishAfterCommit();
+
+    }
+    
 
     public static IncomeRepository repository() {
         IncomeRepository incomeRepository = IncomeApplication.applicationContext.getBean(
