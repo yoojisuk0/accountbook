@@ -1,4 +1,4 @@
-![image](https://play-lh.googleusercontent.com/XskKKrerCZPR5YH9iqSNNI9RmBedf_UN5KDr6ffeypSG-yn1dBi2yRoahttm9ENqvi-d=w240-h480-rw) ![뱅크샐러드](https://github.com/yoojisuk0/account-book/assets/61814964/c0901320-abe9-44ab-bc8a-1863d890568c)
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/d0bc2d6b-d0b0-447a-9f86-87ee5189d3e8)![image](https://play-lh.googleusercontent.com/XskKKrerCZPR5YH9iqSNNI9RmBedf_UN5KDr6ffeypSG-yn1dBi2yRoahttm9ENqvi-d=w240-h480-rw) ![뱅크샐러드](https://github.com/yoojisuk0/account-book/assets/61814964/c0901320-abe9-44ab-bc8a-1863d890568c)
 
 
 # 가계부
@@ -17,7 +17,7 @@
 # 클라우드 네이티브 모델링(Biz.)
 ### 도메인분석 - 이벤트스토밍
 - 도메인 구성 (1단계)
-- 
+
 ![image](https://github.com/yoojisuk0/accountbook/assets/61814964/176a26b8-0537-4c02-9943-5736e6e6f45c)
 
 - 바운디드 컨텍스트 구성 (2단계)
@@ -28,20 +28,7 @@
 
 # 클라우드 네이티브 개발(Dev.)
 ### 분산트랜잭션 - Saga
-### 보상처리 - Compensation
-### 단일 진입점 - Gateway
-### 분산 데이터 프로젝션 - CQRS
-
-# 클라우드 네이티브 운영(Paas)
-### 클라우드 배포 - Container 운영
-### 컨테이너 자동확장 - HPA
-### 컨테이너로부터 환경 분리 - ConfigMap/Secret 
-### 클라우드스토리지 활용 - PVC
-### 셀프 힐링/무정지배포 - Liveness/Rediness Probe
-### 서비스 메쉬 응용 - Mesh
-### 통합 모니터링 - Loggregation/Monitoring
-
-# 구현:
+- 구현:
 
 ```
 cd account
@@ -62,8 +49,7 @@ mvn spring-boot:run
 cd gateway
 mvn spring-boot:run
 ```
-
-## DDD 의 적용
+- DDD 의 적용
 
 ```
 package accountbook.domain;
@@ -187,8 +173,6 @@ public class Cash {
 
 }
 
-
-
 ```
 - Repository
 ```
@@ -232,8 +216,9 @@ http localhost:8088/cash/1
 ```
 
 
-- Kafka StreamListener
 
+### 보상처리 - Compensation
+- Kafka StreamListener
 
 ```
 package accountbook.infra;
@@ -364,3 +349,129 @@ public class PolicyHandler {
 //>>> Clean Arch / Inbound Adaptor
 
 ```
+- kafka 기동 확인
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/a6857296-c0af-42f9-8149-6767e095090e)
+
+
+### 단일 진입점 - Gateway
+- gateway application.yml
+```
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+#<<< API Gateway / Routes
+      routes:
+        - id: account
+          uri: http://localhost:8082
+          predicates:
+            - Path=/accounts/**, 
+        - id: income
+          uri: http://localhost:8083
+          predicates:
+            - Path=/incomes/**, 
+        - id: expense
+          uri: http://localhost:8084
+          predicates:
+            - Path=/expenses/**, 
+        - id: category
+          uri: http://localhost:8085
+          predicates:
+            - Path=/categorys/**, 
+        - id: cash
+          uri: http://localhost:8086
+          predicates:
+            - Path=/cash/**
+#>>> API Gateway / Routes
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: account
+          uri: http://account:8080
+          predicates:
+            - Path=/accounts/**, 
+        - id: income
+          uri: http://income:8080
+          predicates:
+            - Path=/incomes/**, 
+        - id: expense
+          uri: http://expense:8080
+          predicates:
+            - Path=/expenses/**, 
+        - id: category
+          uri: http://category:8080
+          predicates:
+            - Path=/categories/**, 
+        - id: cash
+          uri: http://cash:8080
+          predicates:
+            - Path=/cash/**
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080
+
+```
+
+- TEST
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/418f51cc-9e42-4789-9842-ba5a7cf7fa9b)
+
+
+### 분산 데이터 프로젝션 - CQRS
+
+# 클라우드 네이티브 운영(Paas)
+### 클라우드 배포 - Container 운영
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/758a51a8-fd7c-4c0d-afec-34030eeb9d66)
+
+
+### 컨테이너 자동확장 - HPA
+- HPA 생성
+
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/8ac5ca71-2b52-466c-b331-8997d0fec3b9)
+
+- TEST
+
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/b43a13ef-a5c9-4926-9d14-f372c8546f41)
+
+
+### 컨테이너로부터 환경 분리 - ConfigMap/Secret 
+### 클라우드스토리지 활용 - PVC
+### 셀프 힐링/무정지배포 - Liveness/Rediness Probe
+### 서비스 메쉬 응용 - Mesh
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/166b46ee-22ec-497c-b3e8-81ed17786b77)
+
+### 통합 모니터링 - Loggregation/Monitoring
+
+
+
+
