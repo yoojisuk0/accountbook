@@ -29,184 +29,64 @@ public class Cash {
     }
 
     //<<< Clean Arch / Port Method
-    public static void increaseCash(
-        CreateIncomeCompleted createIncomeCompleted
-    ) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
+    public static void increaseCash(CreateIncomeCompleted createIncomeCompleted) {
         Cash cash = new Cash();
         repository().save(cash);
 
         IncreaseCashCompleted increaseCashCompleted = new IncreaseCashCompleted(cash);
         increaseCashCompleted.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(createIncomeCompleted.get???()).ifPresent(cash->{
-            
-            cash // do something
-            repository().save(cash);
-
-            IncreaseCashCompleted increaseCashCompleted = new IncreaseCashCompleted(cash);
-            increaseCashCompleted.publishAfterCommit();
-
-         });
-        */
-
     }
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
-    public static void increaseCash(
-        DeleteExpenseCompleted deleteExpenseCompleted
-    ) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
+    public static void increaseCash(DeleteExpenseCompleted deleteExpenseCompleted) {
         Cash cash = new Cash();
         repository().save(cash);
 
         IncreaseCashCompleted increaseCashCompleted = new IncreaseCashCompleted(cash);
         increaseCashCompleted.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(deleteExpenseCompleted.get???()).ifPresent(cash->{
-            
-            cash // do something
-            repository().save(cash);
-
-            IncreaseCashCompleted increaseCashCompleted = new IncreaseCashCompleted(cash);
-            increaseCashCompleted.publishAfterCommit();
-
-         });
-        */
-
     }
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
-    public static void decreaseCash(
-        CreateExpenseCompleted createExpenseCompleted
-    ) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
+    public static void decreaseCash(CreateExpenseCompleted createExpenseCompleted) {
         Cash cash = new Cash();
         repository().save(cash);
 
         DecreaseCashCompleted decreaseCashCompleted = new DecreaseCashCompleted(cash);
         decreaseCashCompleted.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(createExpenseCompleted.get???()).ifPresent(cash->{
-            
-            cash // do something
-            repository().save(cash);
-
-            DecreaseCashCompleted decreaseCashCompleted = new DecreaseCashCompleted(cash);
-            decreaseCashCompleted.publishAfterCommit();
-
-         });
-        */
-
     }
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
-    public static void decreaseCash(
-        DeleteIncomeCompleted deleteIncomeCompleted
-    ) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
+    public static void decreaseCash(DeleteIncomeCompleted deleteIncomeCompleted) {
         Cash cash = new Cash();
         repository().save(cash);
 
         DecreaseCashCompleted decreaseCashCompleted = new DecreaseCashCompleted(cash);
         decreaseCashCompleted.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(deleteIncomeCompleted.get???()).ifPresent(cash->{
-            
-            cash // do something
-            repository().save(cash);
-
-            DecreaseCashCompleted decreaseCashCompleted = new DecreaseCashCompleted(cash);
-            decreaseCashCompleted.publishAfterCommit();
-
-         });
-        */
-
     }
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
-    public static void createCash(
-        CreateAccountCompleted createAccountCompleted
-    ) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
+    public static void createCash(CreateAccountCompleted createAccountCompleted) {
         Cash cash = new Cash();
         repository().save(cash);
 
         CreateCashCompleted createCashCompleted = new CreateCashCompleted(cash);
         createCashCompleted.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(createAccountCompleted.get???()).ifPresent(cash->{
-            
-            cash // do something
-            repository().save(cash);
-
-            CreateCashCompleted createCashCompleted = new CreateCashCompleted(cash);
-            createCashCompleted.publishAfterCommit();
-
-         });
-        */
-
     }
 
     //>>> Clean Arch / Port Method
     //<<< Clean Arch / Port Method
-    public static void deleteCash(
-        DeleteAccountCompleted deleteAccountCompleted
-    ) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
+    public static void deleteCash(DeleteAccountCompleted deleteAccountCompleted) {
         Cash cash = new Cash();
         repository().save(cash);
 
         DeleteCashCompleted deleteCashCompleted = new DeleteCashCompleted(cash);
         deleteCashCompleted.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(deleteAccountCompleted.get???()).ifPresent(cash->{
-            
-            cash // do something
-            repository().save(cash);
-
-            DeleteCashCompleted deleteCashCompleted = new DeleteCashCompleted(cash);
-            deleteCashCompleted.publishAfterCommit();
-
-         });
-        */
-
     }
     //>>> Clean Arch / Port Method
 
 }
-//>>> DDD / Aggregate Root
+// >>> DDD / Aggregate Root
