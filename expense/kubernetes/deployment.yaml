@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: catexpense
-          image: yoojisuk0/catexpense:latest
+          image: yoojisuk0/catexpense:v1
           ports:
             - containerPort: 8080
           readinessProbe:

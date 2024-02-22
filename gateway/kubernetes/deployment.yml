@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: gateway
-          image: yoojisuk0/gateway:latest
+          image: yoojisuk0/gateway:v1
           ports:
             - containerPort: 8080

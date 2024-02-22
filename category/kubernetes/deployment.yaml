@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: category
-          image: yoojisuk0/category:latest
+          image: yoojisuk0/category:v1
           ports:
             - containerPort: 8080
           readinessProbe:

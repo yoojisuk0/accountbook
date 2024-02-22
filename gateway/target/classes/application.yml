@@ -56,19 +56,19 @@ spring:
         - id: account
           uri: http://account:8080
           predicates:
-            - Path=/account/**, 
+            - Path=/accounts/**, 
         - id: income
           uri: http://income:8080
           predicates:
-            - Path=/income/**, 
+            - Path=/incomes/**, 
         - id: expense
           uri: http://expense:8080
           predicates:
-            - Path=/expense/**, 
+            - Path=/expenses/**, 
         - id: category
           uri: http://category:8080
           predicates:
-            - Path=/category/**, 
+            - Path=/categories/**, 
         - id: cash
           uri: http://cash:8080
           predicates:

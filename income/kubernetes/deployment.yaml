@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: income
-          image: yoojisuk0/income:latest
+          image: yoojisuk0/income:v1
           ports:
             - containerPort: 8080
           readinessProbe:

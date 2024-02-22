@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: cash
-          image: yoojisuk0/cash:latest
+          image: yoojisuk0/cash:v1
           ports:
             - containerPort: 8080
           readinessProbe:

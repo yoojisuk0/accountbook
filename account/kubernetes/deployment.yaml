@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: account
-          image: yoojisuk0/account:latest
+          image: yoojisuk0/account:v1
           ports:
             - containerPort: 8080
           readinessProbe:
