@@ -23,6 +23,20 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
 
+  gateway:
+    depends_on: 
+      - kafka
+    image: adoptopenjdk/maven-openjdk11:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    command: mvn spring-boot:run
+    ports:
+      - 8081:8081
+    working_dir: /usr/src
+    volumes:
+      - ./gateway:/usr/src
+      - ./maven-repo:/root/.m2
+
   account:
     depends_on: 
       - kafka
@@ -92,4 +106,5 @@ services:
     volumes:
       - ./cash:/usr/src
       - ./maven-repo:/root/.m2
+
       

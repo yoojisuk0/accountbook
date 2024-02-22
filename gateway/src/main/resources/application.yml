@@ -12,23 +12,23 @@ spring:
         - id: account
           uri: http://localhost:8082
           predicates:
-            - Path=/accounts/**, 
+            - Path=/account/**, 
         - id: income
           uri: http://localhost:8083
           predicates:
-            - Path=, 
+            - Path=/income/**, 
         - id: expense
           uri: http://localhost:8084
           predicates:
-            - Path=, 
+            - Path=/expense/**, 
         - id: category
           uri: http://localhost:8085
           predicates:
-            - Path=, 
+            - Path=/category/**, 
         - id: cash
           uri: http://localhost:8086
           predicates:
-            - Path=, 
+            - Path=/cash/**, 
         - id: frontend
           uri: http://localhost:8080
           predicates:
@@ -56,23 +56,23 @@ spring:
         - id: account
           uri: http://account:8080
           predicates:
-            - Path=/accounts/**, 
+            - Path=/account/**, 
         - id: income
           uri: http://income:8080
           predicates:
-            - Path=, 
+            - Path=/income/**, 
         - id: expense
           uri: http://expense:8080
           predicates:
-            - Path=, 
+            - Path=/expense/**, 
         - id: category
           uri: http://category:8080
           predicates:
-            - Path=, 
+            - Path=/category/**, 
         - id: cash
           uri: http://cash:8080
           predicates:
-            - Path=, 
+            - Path=/cash/**, 
         - id: frontend
           uri: http://frontend:8080
           predicates:
