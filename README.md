@@ -465,6 +465,9 @@ server:
 
 
 ### 컨테이너로부터 환경 분리 - ConfigMap/Secret 
+- ConfigMap 생성
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/ae355af2-36a8-424e-9413-aa0dfdfc3ff7)
+
 ### 클라우드스토리지 활용 - PVC
 ### 셀프 힐링/무정지배포 - Liveness/Rediness Probe
 ### 서비스 메쉬 응용 - Mesh
