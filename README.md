@@ -472,8 +472,11 @@ server:
 ### 셀프 힐링/무정지배포 - Liveness/Rediness Probe
 ### 서비스 메쉬 응용 - Mesh
 ![image](https://github.com/yoojisuk0/accountbook/assets/61814964/166b46ee-22ec-497c-b3e8-81ed17786b77)
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/4960902a-80a5-472d-aa2e-8342dff8cc7e)
+
 
 ### 통합 모니터링 - Loggregation/Monitoring
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/29a543d0-d850-4189-ad76-62e0d6c876e7)
 
 
 
