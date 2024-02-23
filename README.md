@@ -475,6 +475,7 @@ server:
 - efs-sc 스토리지 클래스 생성 확인
 ![image](https://github.com/yoojisuk0/accountbook/assets/61814964/7676a0f9-11e4-455d-b925-573caa5433c2)
 - PVC 생성
+
 ![image](https://github.com/yoojisuk0/accountbook/assets/61814964/55d64f76-f9e6-489b-9617-4e95668304cc)
 
 
