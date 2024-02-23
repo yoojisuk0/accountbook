@@ -476,8 +476,15 @@ server:
 
 
 ### 통합 모니터링 - Loggregation/Monitoring
+- Kiali
 ![image](https://github.com/yoojisuk0/accountbook/assets/61814964/29a543d0-d850-4189-ad76-62e0d6c876e7)
 
+- Jaeger
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/a77afb50-1f63-4543-8b0e-a76925a80fcc)
 
 
+- Prometheus
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/fe4d93b1-ea77-44fe-be0e-ddf5f6c32c74)
 
+- Grafana
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/b0299b9c-0095-4d47-9a7f-c4bfe3e27ccf)
