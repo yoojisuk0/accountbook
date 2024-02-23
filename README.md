@@ -469,6 +469,16 @@ server:
 ![image](https://github.com/yoojisuk0/accountbook/assets/61814964/ae355af2-36a8-424e-9413-aa0dfdfc3ff7)
 
 ### 클라우드스토리지 활용 - PVC
+- helm을 통해 설치한 kafka는 pvc를 사용하는것 같다.
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/37e903f6-3798-49be-b981-7c2ebf34d1c2)
+
+- efs-sc 스토리지 클래스 생성 확인
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/7676a0f9-11e4-455d-b925-573caa5433c2)
+- PVC 생성
+![image](https://github.com/yoojisuk0/accountbook/assets/61814964/55d64f76-f9e6-489b-9617-4e95668304cc)
+
+
+
 ### 셀프 힐링/무정지배포 - Liveness/Rediness Probe
 ### 서비스 메쉬 응용 - Mesh
 ![image](https://github.com/yoojisuk0/accountbook/assets/61814964/166b46ee-22ec-497c-b3e8-81ed17786b77)
